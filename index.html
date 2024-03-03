@@ -152,19 +152,16 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 	<div id="content" class="w3-container">
 		        <p>Does the headache occur at the same time every day or night?</p>    
-        <a href="#five"  onclick="clusterAdd();" class="w3-btn w3-black"> Yes</a> <!--This function takes in all the information if you click Yes it adds to probability of cluster headaches for the user-->
-        <a href="#five"  onclick="migraineAdd();" class="w3-btn w3-black">No </a> <!--This function takes in all the information if you click No it adds to probability of migraine for the user-->
- </div>
+        <a  onclick="clusterAdd();" class="w3-btn w3-black"> Yes</a> <!--This function takes in all the information if you click Yes it adds to probability of cluster headaches for the user-->
+        <a  onclick="migraineAdd();" class="w3-btn w3-black">No </a> <!--This function takes in all the information if you click No it adds to probability of migraine for the user-->
+	
+	<p id = "results"> </p> 
+ 	   <a onclick= "showResults();" class="w3-btn w3-black"> Click on Results </a> <!--This function initiates the math for calculating probability after the button has been clicked-->
+	</div>
  </div>
 
 	
-<!--Results Page-->
-<div class="page" id="five">
-	<div id="content" class="w3-container">
-	<p id = "results"> </p> 
- 	   <a onclick= "showResults();" class="w3-btn w3-black"> Click on Results </a> <!--This function initiates the math for calculating probability after the button has been clicked-->
-    </div>
-</div>	 
+
 
 
 <footer class="w3-bottom w3-container w3-flat-carrot">
