@@ -36,14 +36,32 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<link rel="stylesheet" href="w3-colors-flat.css">
 </head> 
 
+
 <script>
-
-	//YOUR JAVASCRIPT GOES HERE
-
-</script>	
+        var cluster_count = 0;
+        var cold_count = 0;
 
 
-<!-- THIS STYLE CODE HELPS MAKE YOUR APP LOOK GOOD. PROBABLY DONT MESS WITH IT -->
+        function clusterAdd(){
+            cluster_count = cluster_count + 1;
+		alert(cluster_count);
+
+        }
+
+        function migraineAdd(){
+            migraine_count = migraine_count + 1;
+        }
+        
+        function showResults() {
+        var aPercent = Math.round((cluster_count/4) * 100) // This part of the function adds up all cluster headaches clicks, divides by 4, and multiplies by 100 to get a percent on the display
+        var cPercent = Math.round((migraine_count/4) * 100) // This part of the function adds up all the migraine clicks, divides by 4, and multiplies by 100 to get a percent on the display
+        var resultText = document.getElementById("results") // This part helps change the word results and displays actual numbers on the last page after the function has been run by a click
+        resultText.innerHTML = "Probability it is Cluster Headache =" + aPercent + "%" + "<br> Probability it is a Migraine =" + cPercent + "%"; // This part is the code that does the math depending on how many clicks you got from each function, and brings in elements from last three lines to make a good looking results page
+}
+  </script>
+
+
+
 <style>	
 .body {
      margin: 0em;
@@ -67,9 +85,81 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </style>
 
 <body>
+<!-- Intro Page-->
+<div id="header" class="w3-container w3-flat-carrot">
+	<h1>Migraine or Cluster Headache?</h1>
+</div>
 	
-	<!-- HERE IS WHERE ALL OF YOUR HTML PAGES GO -->
-	REPLACE THIS TEXT
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might have a migraine but wonder if it is a cluster headache? Answer a few short questions to find out!</p>
 	
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<!--Page 1, page one talks about the eyes watery or itchy question, and moves onto next page-->
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+	<p>Are your eyes watery or itchy?</p>    
+	<a href="#two"  onclick="clusterAdd();" class="w3-btn w3-black"> Yes</a> <!--This function takes in all the information if you click Yes it adds to probability of cluster headaches for the user-->
+         	<a href="#two"  onclick="migraineAdd();" class="w3-btn w3-black">No</a> <!--This function takes in all the information if you click No it adds to probability of migraine for the user-->
+ </div><!-- /content -->
+</div>
+<!--Page 2, talks about fever question, and then moves onto next page-->
+<div class="page" id="two">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+	<p>Do you have a fever?</p>    
+       <a href="#three"  onclick="clusterAdd();" class="w3-btn w3-black"> Yes</a> <!--This function takes in all the information if you click Yes it adds to probability of cluster headaches for the user-->
+	<a href="#three"  onclick="migraineAdd();" class="w3-btn w3-black"> No</a> <!--This function takes in all the information if you click No it adds to probability of migraine for the user-->
+ </div><!-- /content -->
+ </div><!-- /content -->
+</div>	
+<!--Page 3, talks about the sore throat question and moves onto the next page-->
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		        <p>Do you have a sore throat?</p>    
+        <a href="#four"  onclick="clusterAdd();" class="w3-btn w3-black"> Yes</a> <!--This function takes in all the information if you click Yes it adds to probability of cluster headache for the user-->
+         <a href="#four"  onclick="migraineAdd();" class="w3-btn w3-black"> No</a> <!--This function takes in all the information if you click No it adds to probability of migraine for the user-->
+ </div><!-- /content -->
+ </div><!-- /content -->
+</div>	
+<!--Page 4, talks about the symptoms question, if they are season or chronic, and then moves onto the Results page-->
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		        <p>Are your symptoms seasonal or chronic?</p>    
+        <a href="#five"  onclick="clusterAdd();" class="w3-btn w3-black"> Yes</a> <!--This function takes in all the information if you click Yes it adds to probability of cluster headaches for the user-->
+        <a href="#five"  onclick="migraineAdd();" class="w3-btn w3-black">No </a> <!--This function takes in all the information if you click No it adds to probability of migraine for the user-->
+ </div><!-- /content -->
+ </div><!-- /content -->
+</div>	
+<!--Results Page-->
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+	<p id = "results"> </p> 
+    <a onclick= "showResults();" class="w3-btn w3-black"> Click on Results </a> <!--This function initiates the math for calculating probability after the button has been clicked-->
+    
+
+
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer>
+
 </body>
 </html>
