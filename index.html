@@ -53,11 +53,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         }
         
         function showResults() {
-	alert("hb");
+	alert("results");
         var aPercent = Math.round((cluster_count/4) * 100); // This part of the function adds up all cluster headaches clicks, divides by 4, and multiplies by 100 to get a percent on the display
         var cPercent = Math.round((migraine_count/4) * 100); // This part of the function adds up all the migraine clicks, divides by 4, and multiplies by 100 to get a percent on the display
-        var resultText = document.getElementById("results"); // This part helps change the word results and displays actual numbers on the last page after the function has been run by a click
-        document.getElementById("results").innerHTML = "Probability it is Cluster Headache =" + aPercent + "%" + "<br> Probability it is a Migraine =" + cPercent + "%"; // This part is the code that does the math depending on how many clicks you got from each function, and brings in elements from last three lines to make a good looking results page
+        var resultText = document.getElementById("results") // This part helps change the word results and displays actual numbers on the last page after the function has been run by a click
+        resultText.innerHTML = "Probability it is Cluster Headache =" + aPercent + "%" + "<br> Probability it is a Migraine =" + cPercent + "%"; // This part is the code that does the math depending on how many clicks you got from each function, and brings in elements from last three lines to make a good looking results page
 }
   </script>
 
